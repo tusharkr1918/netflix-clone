@@ -1,0 +1,72 @@
+#row {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+/*  */
+.row__posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.row__posters::-webkit-scrollbar {
+    display: none;
+}
+
+.row__poster {
+    object-fit: contain;
+    width: 100%;
+    max-height: 100px;
+    margin-right: 10px;
+    transition: transform 450ms;
+}
+
+.row__poster:hover {
+    transform: scale(1.08);
+}
+
+.row__posterLarge {
+    max-height: 250px;
+}
+
+.row__posterLarge:hover {
+    transform: scale(1.09);
+}
+
+.showTrailer {
+    height: 0px;
+    opacity: 0; /* Initially hidden */
+    overflow: hidden; /* Hide content that exceeds the height */
+    animation: fadeIn 0.5s ease-in-out forwards; /* Animation effect */
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+      height: 400px;
+    }
+}
+
+.hideTrailer {
+    height: 400px; /* Set initial height to the expanded height */
+    opacity: 1; /* Initially visible */
+    overflow: hidden; /* Hide content that exceeds the height */
+    animation: fadeOut 0.5s ease-in-out forwards; /* Animation effect */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        height: 400px;
+    }
+    to {
+        opacity: 0;
+        height: 0px;
+    }
+}
